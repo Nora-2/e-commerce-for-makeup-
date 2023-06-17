@@ -2,7 +2,7 @@
 
 A flutter E-commerce app using makup api template.
 
-## Screenshots
+
 
 ### Screens
 
