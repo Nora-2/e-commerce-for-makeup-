@@ -156,14 +156,17 @@ class _HomeScreenState extends State<HomeScreen>
                             },
                             title: "Latest");
                       case 4:
-                        return Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [Text('New',style: TextStyle(
-                    color: colors.primary,
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Pacifico',
-                  ),)],
+                        return Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [Text('New Featuers',style: TextStyle(
+                                            color: colors.primary,
+                                            fontSize: 32,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Pacifico',
+                                          ),)],
+                          ),
                         );
                       case 5:
                         return gridViewScreensContainer(

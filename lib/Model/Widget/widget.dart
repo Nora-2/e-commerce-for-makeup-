@@ -727,7 +727,7 @@ class ProductGrideView extends StatelessWidget {
         itemCount: productList.length,
         physics: uiDuplicate.defaultScroll,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, crossAxisSpacing: 50, mainAxisSpacing: 50),
+          crossAxisCount: 2, crossAxisSpacing: 50, mainAxisSpacing: 50),
         itemBuilder: (context, index) {
           return Container(
             alignment: Alignment.center,
