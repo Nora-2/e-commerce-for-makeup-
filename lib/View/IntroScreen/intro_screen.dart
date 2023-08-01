@@ -75,10 +75,7 @@ class _IntroScreenState extends State<IntroScreen> {
                   decoration: BoxDecoration(
                       color: colors.whiteColor,
                       borderRadius: BorderRadius.circular(12)),
-                  child: Icon(
-                    Icons.arrow_circle_right_outlined,
-                    color: colors.primary,
-                  )),
+                  child: Text('skip',style: TextStyle(color: colors.primary),)),
               renderDoneBtn: Container(
                   alignment: Alignment.center,
                   width: 40,
