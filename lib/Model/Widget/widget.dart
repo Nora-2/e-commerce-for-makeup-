@@ -727,7 +727,7 @@ class ProductGrideView extends StatelessWidget {
         itemCount: productList.length,
         physics: uiDuplicate.defaultScroll,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 8, crossAxisSpacing: 17, mainAxisSpacing: 17),
+            crossAxisCount: 2, crossAxisSpacing: 50, mainAxisSpacing: 50),
         itemBuilder: (context, index) {
           return Container(
             alignment: Alignment.center,
@@ -770,23 +770,23 @@ Widget gridViewScreensContainer(
     margin: const EdgeInsets.only(top: 30),
     padding: const EdgeInsets.all(15),
     decoration: BoxDecoration(
-        boxShadow: [
-                    BoxShadow(
-                      color: colors.primary,
-                      offset: const Offset(
-                        5.0,
-                        5.0,
-                      ),
-                      blurRadius: 10.0,
-                      spreadRadius: 2.0,
-                    ), //BoxShadow
-                    BoxShadow(
-                      color: Colors.white,
-                      offset: const Offset(0.0, 0.0),
-                      blurRadius: 0.0,
-                      spreadRadius: 0.0,
-                    ), //BoxShadow
-                  ],
+        // boxShadow: [
+        //             BoxShadow(
+        //               color: colors.primary,
+        //               offset: const Offset(
+        //                 5.0,
+        //                 5.0,
+        //               ),
+        //               blurRadius: 10.0,
+        //               spreadRadius: 2.0,
+        //             ), //BoxShadow
+        //             BoxShadow(
+        //               color: Colors.white,
+        //               offset: const Offset(0.0, 0.0),
+        //               blurRadius: 0.0,
+        //               spreadRadius: 0.0,
+        //             ), //BoxShadow
+        //           ],
         
         borderRadius:  BorderRadius.only(
                     topLeft: Radius.circular(10.0),

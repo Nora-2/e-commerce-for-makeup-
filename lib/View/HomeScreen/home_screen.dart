@@ -77,51 +77,11 @@ class _HomeScreenState extends State<HomeScreen>
                 centerTitle: true,
                 title: Text(
                   "Store",
-                  style:
-                    TextStyle(
-                      fontSize: 35.0,
-                      color:colors.whiteColor,
-                      fontFamily: 'Pacifico',
-                    ),
-                ),
-                leading: CupertinoButton(
-                  child: Icon(
-                    Icons.menu,
-                    color: Colors.black,
+                  style: TextStyle(
+                    fontSize: 35.0,
+                    color: colors.whiteColor,
+                    fontFamily: 'Pacifico',
                   ),
-                  onPressed: () {
-                    showMenu(
-                        color: Colors.white,
-                        context: context,
-                        position: RelativeRect.fill,
-                        items: [
-                          PopupMenuItem(
-                              child: TextButton(
-                            onPressed: () {
-                              Get.back();
-                              launchUrl(
-                                Uri.parse(developerGithub),
-                                mode: LaunchMode.externalApplication,
-                              );
-                            },
-                            child: Text(
-                              "Developer Github page",
-                              style: textStyle.bodyNormal,
-                            ),
-                          )),
-                          PopupMenuItem(
-                              child: TextButton(
-                            onPressed: () {
-                              Get.back();
-                              showLicensePage(context: context);
-                            },
-                            child: Text(
-                              "Application license",
-                              style: textStyle.bodyNormal,
-                            ),
-                          ))
-                        ]);
-                  },
                 ),
                 actions: [
                   CupertinoButton(
@@ -157,31 +117,32 @@ class _HomeScreenState extends State<HomeScreen>
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              // Text(
-                              //   "shop now",
-                              //   style: textStyle.titleLarge.copyWith(
-                              //     overflow: TextOverflow.clip,
-                                  
-                              //   fontFamily: 'Pacifico',
-             
-                              //   ),
-                              // ),
                               const SizedBox(
                                 height: 5,
                               ),
                               Text(
                                 "Find the perfect watch for your wrist",
                                 style: TextStyle(
-                      fontSize: 24.0,
-                      color: Colors.black,
-                      fontFamily: 'Pacifico',
-                    
-                ),
+                                  fontSize: 24.0,
+                                  color: Colors.black,
+                                  fontFamily: 'Pacifico',
+                                ),
                               )
                             ],
                           ),
                         );
+
                       case 2:
+                        return BannerListView(
+                            callback: () {
+                              Get.to(ShopScreen(
+                                  title: "Top deals",
+                                  productList: productList));
+                            },
+                            produtList: productList,
+                            colors: colors,
+                            textStyle: textStyle);
+                      case 3:
                         return ProductListView(
                             colors: colors,
                             profileFunctions: profileFunctions,
@@ -194,32 +155,25 @@ class _HomeScreenState extends State<HomeScreen>
                                   title: "Latest", productList: productList));
                             },
                             title: "Latest");
-
-                      case 3:
-                        return BannerListView(
-                            callback: () {
-                              Get.to(ShopScreen(
-                                  title: "Top deals",
-                                  productList: productList));
-                            },
-                            produtList: productList,
-                            colors: colors,
-                            textStyle: textStyle);
-
                       case 4:
-                        return ProductListView(
-                            profileFunctions: profileFunctions,
-                            colors: colors,
-                            textStyle: textStyle,
-                            productList: productList.reversed.toList(),
-                            title: "Featured products",
-                            physics: physics,
-                            callback: () {
-                              Get.to(ShopScreen(
-                                  title: "Featured products",
-                                  productList: productList.reversed.toList()));
-                            },
-                            reverse: false);
+                        return Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [Text('New',style: TextStyle(
+                    color: colors.primary,
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Pacifico',
+                  ),)],
+                        );
+                      case 5:
+                        return gridViewScreensContainer(
+                          colors: colors,
+                          child: ProductGrideView(
+                              productList: productList,
+                              uiDuplicate: duplicateController.uiDuplicate,
+                              colors: colors,
+                              textStyle: textStyle),
+                        );
                       default:
                         return Container();
                     }

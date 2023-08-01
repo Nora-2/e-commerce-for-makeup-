@@ -100,21 +100,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   ),
                 ),
               ),
-              CircleAvatar(
-                backgroundColor: colors.whiteColor,
-                child: IconButton(
-                  highlightColor: colors.whiteColor,
-                  splashColor: colors.whiteColor,
-                  icon: Icon(
-                    CupertinoIcons.arrow_up_right,
-                    color: colors.blackColor,
-                  ),
-                  onPressed: () {
-                    Share.shareWithResult("https://github.com/EmirBashiri",
-                        subject: "Developer github profile");
-                  },
-                ),
-              )
+              
             ],
           ),
         ),
