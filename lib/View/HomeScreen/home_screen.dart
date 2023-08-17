@@ -171,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen>
                       case 5:
                         return  Padding(
                           padding: const EdgeInsets.only(top:20,left: 20,right: 20),
-                          child: ProductGrideView(
+                          child: ProductGrideViewHome(
                                 productList: productList,
                                 uiDuplicate: duplicateController.uiDuplicate,
                                 colors: colors,

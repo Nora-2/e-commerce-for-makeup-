@@ -765,6 +765,69 @@ class ProductGrideView extends StatelessWidget {
     );
   }
 }
+class ProductGrideViewHome extends StatelessWidget {
+  const ProductGrideViewHome({
+    Key? key,
+    required this.productList,
+    required this.uiDuplicate,
+    required this.colors,
+    required this.textStyle,
+  }) : super(key: key);
+
+  final List<ProductEntity> productList;
+  final UiDuplicate uiDuplicate;
+  final CustomColors colors;
+  final CustomTextStyle textStyle;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: Get.mediaQuery.size.width,
+      height: Get.mediaQuery.size.height,
+      child: GridView.builder(
+        
+        scrollDirection: Axis.vertical,
+        itemCount: productList.length,
+        physics: NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, crossAxisSpacing: 50, mainAxisSpacing: 50),
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.all(10),
+            child: Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+              boxShadow: [
+                      BoxShadow(
+                        color: colors.primary,
+                        offset: const Offset(
+                          5.0,
+                          5.0,
+                        ),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ), //BoxShadow
+                      BoxShadow(
+                        color: Colors.white,
+                        offset: const Offset(0.0, 0.0),
+                        blurRadius: 0.0,
+                        spreadRadius: 0.0,
+                      ), //BoxShadow
+                    ],
+                  // color: Color.fromARGB(237, 255, 247, 219),
+                  borderRadius: BorderRadius.circular(15)),
+              child: ShopProductView(
+                product: productList[index],
+                textStyle: textStyle,
+                colors: colors,
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
 
 Widget gridViewScreensContainer(
     {required Widget child, required CustomColors colors}) {

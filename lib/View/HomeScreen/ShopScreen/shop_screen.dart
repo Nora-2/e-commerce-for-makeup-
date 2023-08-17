@@ -30,7 +30,7 @@ class ShopScreen extends StatelessWidget {
           style: textStyle.titleLarge.copyWith(color: colors.whiteColor),
         ),
       ),
-      backgroundColor: colors.blackColor,
+      backgroundColor: Colors.white,
       body: gridViewScreensContainer(
         colors: colors,
         child: ProductGrideView(
