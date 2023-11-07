@@ -1,9 +1,9 @@
+// ignore_for_file: non_constant_identifier_names, library_private_types_in_public_api, avoid_print
+
 import 'dart:async';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_bubbles/chat_bubbles.dart';
-import 'package:flutter/services.dart';
-// import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import '../type_indicator/chat_loader.dart';
 
 
@@ -28,7 +28,7 @@ class _ChatBotWidgetState extends State<ChatBotWidget> {
   Timer? periodicTimer;
   DateTime selectedDate = DateTime.now();
   StreamSubscription? _subscription;
-  bool _isImageSearch = false;
+  // final bool _isImageSearch = false;
   int counter2 = 0;
   String? text;
 
@@ -45,6 +45,7 @@ class _ChatBotWidgetState extends State<ChatBotWidget> {
       // Vx.log(response?.choices[0].text);
       msg = response?.choices[0].text;
       counter2++;
+     
       counter2 < 2 ? insertNewData() : print("");
     });
     // insertNewData(msg, isImage: false);
@@ -78,7 +79,7 @@ class _ChatBotWidgetState extends State<ChatBotWidget> {
   void initState() {
     super.initState();
     chatGPT = OpenAI.instance.build(
-      token: "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",
+      token: "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",
     );
     Restriction();
     Future.delayed(const Duration(seconds: 1), (){
@@ -169,6 +170,7 @@ class _ChatBotWidgetState extends State<ChatBotWidget> {
                       padding: const EdgeInsets.only(left: 20.0,right: 20,top: 10,bottom: 0),
                       child: Container(
                         height: 50,
+                        // ignore: unnecessary_null_comparison
                         width: searchController.text != null && searchController.text != "" ?
                         MediaQuery.of(context).size.width * 0.73 : MediaQuery.of(context).size.width * 0.86,
                         decoration: BoxDecoration(
@@ -209,9 +211,11 @@ class _ChatBotWidgetState extends State<ChatBotWidget> {
                         ),
                       ),
                     ),
+                    // ignore: unnecessary_null_comparison
                     searchController.text != null && searchController.text != "" ?
                     GestureDetector(
                       onTap: () async {
+                        // ignore: unnecessary_null_comparison
                         if(searchController.text == null || searchController.text == ""){
                           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                             content: Text('Message field is empty'),

@@ -6,7 +6,6 @@ import 'package:flutter_application_ecommerce/Model/GetX/Controller/profile_cont
 import 'package:flutter_application_ecommerce/Model/Tools/Color/color.dart';
 import 'package:flutter_application_ecommerce/Model/Tools/Entities/OrderEntity/order_entity.dart';
 import 'package:flutter_application_ecommerce/Model/Tools/JsonParse/product_parse.dart';
-import 'package:flutter_application_ecommerce/Model/Widget/widget.dart';
 import 'package:flutter_application_ecommerce/View/RootScreen/root.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';

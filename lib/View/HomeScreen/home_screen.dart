@@ -5,7 +5,6 @@ import 'package:flutter_application_ecommerce/Model/GetX/Controller/duplicate_co
 import 'package:flutter_application_ecommerce/Model/GetX/Controller/home_controller.dart';
 import 'package:flutter_application_ecommerce/Model/GetX/Controller/profile_controller.dart';
 import 'package:flutter_application_ecommerce/Model/Tools/Color/color.dart';
-import 'package:flutter_application_ecommerce/Model/Tools/Constant/const.dart';
 import 'package:flutter_application_ecommerce/Model/Tools/Font/font.dart';
 import 'package:flutter_application_ecommerce/Model/Tools/JsonParse/product_parse.dart';
 import 'package:flutter_application_ecommerce/Model/Widget/widget.dart';
@@ -15,7 +14,7 @@ import 'package:flutter_application_ecommerce/chat_gpt/chatgpt.dart';
 // import 'package:flutter_application_ecommerce/screens/chat_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 
 import 'bloc/home_bloc.dart';
 
@@ -112,15 +111,15 @@ class _HomeScreenState extends State<HomeScreen>
                   itemBuilder: (context, index) {
                     switch (index) {
                       case 1:
-                        return Padding(
-                          padding: const EdgeInsets.only(top: 10, bottom: 10),
+                        return const Padding(
+                          padding: EdgeInsets.only(top: 10, bottom: 10),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               const SizedBox(
                                 height: 5,
                               ),
-                              Text(
+                             const Text(
                                 "Find the perfect watch for your wrist",
                                 style: TextStyle(
                                   fontSize: 24.0,

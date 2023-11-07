@@ -300,7 +300,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                       top: 10, bottom: 10),
                                   product: product,
                                   textStyle: textStyle,
-                                  widget: Icon(
+                                  widget:const Icon(
                                     CupertinoIcons.shopping_cart,
                                     color: Colors.grey,
                                   ));

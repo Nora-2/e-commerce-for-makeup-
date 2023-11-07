@@ -191,12 +191,12 @@ class _FavoriteBadgeState extends State<FavoriteBadge> {
             }
           },
           child: isInBox
-              ? Icon(
+              ? const Icon(
                   CupertinoIcons.heart_fill,
                   size: 20,
                   color: Colors.red,
                 )
-              : Icon(
+              :const  Icon(
                   CupertinoIcons.heart,
                   color: Colors.grey,
                   size: 20,
@@ -290,17 +290,17 @@ class CartLengthBadge extends StatelessWidget {
             badgeContent: Container(
               alignment: Alignment.center,
               decoration:
-                  BoxDecoration(shape: BoxShape.circle, color: colors.red, boxShadow: [
-                    BoxShadow(
+                   BoxDecoration(shape: BoxShape.circle, color: colors.red, boxShadow: [
+                     const BoxShadow(
                       color:  Color.fromARGB(237, 255, 247, 219),
-                      offset: const Offset(
+                      offset: Offset(
                         5.0,
                         5.0,
                       ),
                       blurRadius: 10.0,
                       spreadRadius: 2.0,
                     ), //BoxShadow
-                    BoxShadow(
+                 const   BoxShadow(
                       color: Colors.white,
                       offset: const Offset(0.0, 0.0),
                       blurRadius: 0.0,
@@ -505,9 +505,9 @@ Widget duplicateContainer(
                       blurRadius: 10.0,
                       spreadRadius: 2.0,
                     ), //BoxShadow
-                    BoxShadow(
+                  const  BoxShadow(
                       color: Colors.white,
-                      offset: const Offset(0.0, 0.0),
+                      offset:  Offset(0.0, 0.0),
                       blurRadius: 0.0,
                       spreadRadius: 0.0,
                     ), //BoxShadow
@@ -744,9 +744,9 @@ class ProductGrideView extends StatelessWidget {
                         blurRadius: 10.0,
                         spreadRadius: 2.0,
                       ), //BoxShadow
-                      BoxShadow(
+                    const  BoxShadow(
                         color: Colors.white,
-                        offset: const Offset(0.0, 0.0),
+                        offset:  Offset(0.0, 0.0),
                         blurRadius: 0.0,
                         spreadRadius: 0.0,
                       ), //BoxShadow
@@ -788,7 +788,7 @@ class ProductGrideViewHome extends StatelessWidget {
         
         scrollDirection: Axis.vertical,
         itemCount: productList.length,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, crossAxisSpacing: 50, mainAxisSpacing: 50),
         itemBuilder: (context, index) {
@@ -807,9 +807,9 @@ class ProductGrideViewHome extends StatelessWidget {
                         blurRadius: 10.0,
                         spreadRadius: 2.0,
                       ), //BoxShadow
-                      BoxShadow(
+                     const BoxShadow(
                         color: Colors.white,
-                        offset: const Offset(0.0, 0.0),
+                        offset:Offset(0.0, 0.0),
                         blurRadius: 0.0,
                         spreadRadius: 0.0,
                       ), //BoxShadow
@@ -835,26 +835,8 @@ Widget gridViewScreensContainer(
     alignment: Alignment.center,
     margin: const EdgeInsets.only(top: 30),
     padding: const EdgeInsets.all(15),
-    decoration: BoxDecoration(
-        // boxShadow: [
-        //             BoxShadow(
-        //               color: colors.primary,
-        //               offset: const Offset(
-        //                 5.0,
-        //                 5.0,
-        //               ),
-        //               blurRadius: 10.0,
-        //               spreadRadius: 2.0,
-        //             ), //BoxShadow
-        //             BoxShadow(
-        //               color: Colors.white,
-        //               offset: const Offset(0.0, 0.0),
-        //               blurRadius: 0.0,
-        //               spreadRadius: 0.0,
-        //             ), //BoxShadow
-        //           ],
-        
-        borderRadius:  BorderRadius.only(
+    decoration:const BoxDecoration(
+        borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(10.0),
                     topRight: Radius.circular(00.0),
                     bottomLeft: Radius.circular(0.0),

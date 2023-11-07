@@ -13,7 +13,6 @@ import 'package:flutter_application_ecommerce/View/CartScreen/cart_screen.dart';
 import 'package:flutter_application_ecommerce/ViewModel/Cart/cart.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
-import 'package:share_plus/share_plus.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key, required this.productEntity});
